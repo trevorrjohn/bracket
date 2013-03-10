@@ -12,6 +12,8 @@
   .field
     = f.label :email
     = f.email_field :email
+    %span.success Valid email
+    %span.warning Invalid email
   .field
     = f.label :password
     = f.password_field :password, id: "original"
