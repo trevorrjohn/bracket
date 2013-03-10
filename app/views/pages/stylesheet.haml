@@ -1,0 +1,70 @@
+%h1 This is a h1
+%h2 This is a h2
+%h3 This is a h3
+%h4 This is a h4
+
+%hr
+
+%h2 This is a paragraph
+%p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at justo ac augue dictum adipiscing at et odio. Aenean porta ligula volutpat diam lobortis ac pretium lacus egestas. In nisi quam, blandit eu rutrum a, rhoncus a dolor. Maecenas vestibulum, mi non tempus vehicula, magna metus tincidunt leo, a hendrerit ligula urna ut metus. Maecenas sit amet libero justo, eget ultricies ante. Nulla mi elit, venenatis ut porta sit amet, semper ut dui. Nullam convallis scelerisque dolor, sed pulvinar eros rhoncus a. Nunc pharetra commodo leo eget lacinia. Proin et erat et nulla mollis ultrices. Etiam tempor malesuada felis eget eleifend. In vel metus sit amet nisi interdum molestie.
+
+%h2 Links
+%a#link1{href: "#link1"} This link has been clicked
+%br
+%a#link2{href: "#link2"} Click me non active
+%br
+%a#link3.disabled{href: "#link3"} Cannot click
+
+%h2 This is a form
+%form
+  .field
+    %label Giant input with warning
+    %input{ type: 'text', class: 'warning giant', placeholder: 'Giant input with warning' }
+    %span.warning Warning text
+  .field
+    %label Large input with alert
+    %input{ type: 'text', class: 'alert large', placeholder: 'Large input with alert' }
+    %span.alert Alert text
+  .field
+    %label Default input with error
+    %input{ type: 'text', class: 'error input', placeholder: 'Default input with error' }
+    %span.error Error text
+  .field
+    %label Small info
+    %input{ type: 'text', class: 'info small', placeholder: 'Input with info' }
+    %span.info Info text
+  .field
+    %label Tiny success
+    %input{ type: 'text', class: 'success tiny', placeholder: 'Tiny success' }
+    %span.success Success text
+  .field
+    %label This is a large text area with info
+    %textarea{ placeholder: 'A lot of text goes here', class: 'large info' }
+
+  .actions
+    %input{ type: 'submit', class: 'btn', value: 'Default button' }
+    %input{ type: 'submit', class: 'btn primary', value: 'Primary button' }
+    %input{ type: 'submit', class: 'btn secondary', value: 'Secondary button' }
+    %input{ type: 'submit', class: 'btn disabled', value: 'Disabled button' }
+    %input{ type: 'submit', class: 'btn warning', value: 'Warning button' }
+    %input{ type: 'submit', class: 'btn info', value: 'Info button' }
+    %input{ type: 'submit', class: 'btn danger', value: 'Danger button' }
+    %input{ type: 'submit', class: 'btn inverse', value: 'Inverse button' }
+    %input{ type: 'submit', class: 'btn giant', value: 'Giant button' }
+    %input{ type: 'submit', class: 'btn large', value: 'Large button' }
+    %input{ type: 'submit', class: 'btn small', value: 'Small' }
+    %input{ type: 'submit', class: 'btn tiny primary', value: 'Tiny' }
+
+%h2 This is a ordered list
+%ol
+  %li Item 1
+  %li Item 2
+  %li Item 3
+  %li Item 4
+
+%h2 This is a unorderd list
+%ul
+  %li Item 1
+  %li Item 2
+  %li Item 3
+  %li Item 4
