@@ -6,7 +6,7 @@ class PagesController < ApplicationController
   def about
   end
 
-  def stylesheet
+  def styleguide
   end
 
 end
