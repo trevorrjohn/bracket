@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/bmabey/database_cleaner.git
+  revision: 8002b4695602bf1e2d1f0b5f7d05d616360608a4
+  specs:
+    database_cleaner (0.9.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -174,6 +180,7 @@ DEPENDENCIES
   bcrypt-ruby (~> 3.0.0)
   capybara-webkit
   coffee-rails (~> 4.0.0.beta1)
+  database_cleaner!
   haml-rails
   jbuilder (~> 1.0.1)
   jquery-rails

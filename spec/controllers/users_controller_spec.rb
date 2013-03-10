@@ -36,9 +36,11 @@ describe UsersController do
 
   describe "GET index" do
     it "assigns all users as @users" do
-      user = User.create! valid_attributes
-      get :index, {}, valid_session
-      assigns(:users).should eq([user])
+      expect {
+        user = User.create! valid_attributes
+        get :index, {}, valid_session
+      }.to change { User.count }.by(+1)
+      assigns(:users).should eq(User.all)
     end
   end
 

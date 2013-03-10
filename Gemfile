@@ -12,6 +12,7 @@ gem 'turbolinks'
 
 group :test, :development do
   gem 'capybara-webkit'
+  gem 'database_cleaner', github: 'bmabey/database_cleaner'
   gem 'pry'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
