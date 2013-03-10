@@ -7,4 +7,11 @@
     = csrf_meta_tags
   %body
     = render 'partials/header_bar'
-    = yield
+
+    .wrapper
+      - if notice.present?
+        %p#notice= notice
+      - if alert.present?
+        %p#alert= alert
+
+      = yield
