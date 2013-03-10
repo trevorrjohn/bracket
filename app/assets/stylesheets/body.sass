@@ -1,8 +1,16 @@
 .wrapper
+  top: 85px
   // Keep for header on top
-  margin-top: 70px
+  margin-top: 10px
   margin-left: 7%
   margin-right: 7%
+  background: $light-gray
+  padding: 0px 20px 40px
+  @include rounded-corners(4px)
+  @include border-left-bottom(darken($light-gray, 10%))
 
 body
-  font-family: 'Times New Roman', Times, serif
+  margin: 0
+  width: 100%
+  background: $background
+  padding: 0 0 60px

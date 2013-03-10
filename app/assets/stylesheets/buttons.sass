@@ -1,0 +1,55 @@
+.actions
+  .btn
+    font-size: 16px
+    line-height: 24px
+    margin: 5px 10px
+    padding: 5px
+    @include size(180px, 34px)
+    @include rounded-corners(2px)
+    @include button-color(lighten($dark-gray, 10%), darken($light-gray, 20%))
+    &:active, &:hover
+      cursor: pointer
+
+  .primary
+    @include button-color($light-gray, $success)
+  .secondary
+    @include button-color($off-black, darken($light-gray, 5%))
+  .disabled
+    color: darken($light-gray, 15%)
+    background: darken($light-gray, 5%)
+    border: 1px solid darken($light-gray, 5%)
+    &:hover
+      color: darken($light-gray, 15%)
+      background: darken($light-gray, 5%)
+      border: 1px solid darken($light-gray, 5%)
+      cursor: default
+    &:active
+      color: darken($light-gray, 15%)
+      background: darken($light-gray, 5%)
+      border: 1px solid darken($light-gray, 5%)
+      pointer-events: none
+  .warning
+    @include button-color(white, $warning)
+  .info
+    @include button-color(white, $info)
+  .danger
+    @include button-color(white, $alert)
+  .inverse
+    @include button-color(white, black)
+
+  .giant
+    @include size(360px, 80px)
+    font-size: 52px
+    line-height: 60px
+  .large
+    @include size(180px, 70px)
+    font-size: 24px
+    line-height: 60px
+  .small
+    @include size(120px, 30px)
+    font-size: 16px
+    line-height: 20px
+  .tiny
+    @include size(60px, 30px)
+    font-size: 14px
+    line-height: 20px

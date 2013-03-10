@@ -18,5 +18,8 @@
   .field
     = f.label :password_confirmation
     = f.password_field :password_confirmation, id: "match"
+    %span.success Passwords match
+    %span.error Passwords do not match
+
   .actions
-    = f.submit 'Sign up', id: "matchFields", data: { original: "#original", match: "#match" }
+    = f.submit 'Sign up', id: "matchFields", class: 'btn primary', data: { original: "#original", match: "#match" }

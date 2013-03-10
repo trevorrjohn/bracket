@@ -1,0 +1,45 @@
+.navbar_wrapper
+  background: $background
+  width: 100%
+  min-height: 75px
+  position: fixed
+  top: 0
+  margin: 0
+  padding: 0
+
+  .navbar
+    height: 60px
+    width: 85%
+    position: fixed
+    top: 10px
+    margin: 0 7% 0
+
+    a
+      font-family: 'Times New Roman', Times, serif
+      text-decoration: none
+      line-height: 60px
+    .brand
+      width: 175px
+      text-align: center
+
+      background: $red
+      @include border-left-bottom(darken($red, 5%))
+
+      float: left
+      @include rounded-corners(4px)
+
+      a, a:visited, a:hover
+        text-shadow: 1px 1px lighten($off-black, 10%)
+        font-size: 50px
+        color: $off-black
+
+    .nav
+      float: right
+
+      a, a:visited, a:hover
+        font-size: 20px
+        color: $off-black
+        &:active
+          color: $red
+
+

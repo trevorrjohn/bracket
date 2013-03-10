@@ -1,0 +1,15 @@
+.flash
+  margin: 75px 0 0
+  width: 100%
+
+  .notice, .alert, .info
+    margin: 0 7%
+    font-size: 16px
+    padding: 5px 10px
+
+  .notice
+    @include flash-notice($notice)
+  .alert
+    @include flash-notice($alert)
+  .info
+    @include flash-notice($info)

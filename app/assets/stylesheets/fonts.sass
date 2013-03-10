@@ -1,0 +1,40 @@
+h1, h2, h3, h4, p, ul, ol, input, label, span
+  color: $dark-gray
+  font-family: 'Times New Roman', Times, serif
+
+h1, h2, h3, h4
+  margin: 0 0 10px
+h1
+  font-size: 50px
+  line-height: 60px
+h2
+  font-size: 38px
+  line-height: 40px
+h3
+  font-size: 28px
+  line-height: 34px
+h4
+  font-size: 23px
+  line-height: 25px
+p, input, ul, ol, label, span, a
+  font-size: 14px
+  line-height: 20px
+
+a
+  color: black
+  text-decoration: none
+  &:hover, &:active
+    text-decoration: underline
+  &:active
+    color: darken($red, 15%)
+  &:visited
+    color: $red
+  
+  &.disabled
+    color: darken($light-gray, 30%)
+    &:hover
+      cursor: default
+      text-decoration: none
+    &:active
+      pointer-events: none
+      cursor: default

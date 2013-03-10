@@ -6,12 +6,16 @@
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
   %body
-    = render 'partials/header_bar'
+    = render 'partials/navbar'
+
+    .flash
+      - if flash[:notice].present?
+        %p.notice= flash[:notice]
+      - if flash[:alert].present?
+        %p.alert= flash[:alert]
+      - if flash[:info].present?
+        %p.info= flash[:info]
 
     .wrapper
-      - if notice.present?
-        %p#notice= notice
-      - if alert.present?
-        %p#alert= alert
 
       = yield
