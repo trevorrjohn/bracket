@@ -44,6 +44,32 @@ describe UsersController do
     end
   end
 
+  describe "POST taken" do
+    context "when user is in database" do
+      let(:expected) { { valid: false }.to_json }
+
+      before do
+        User.create(username: 'user',
+                    password: 'password',
+                    email: 'user@example.com')
+      end
+
+      it "finds the user" do
+        post :taken, format: :json, username: 'user'
+        response.body.should == expected
+      end
+    end
+
+    context "when no user" do
+      let(:expected) { { valid: true }.to_json }
+
+      it "returns true" do
+        post :taken, format: :json, username: 'user'
+        response.body.should == expected
+      end
+    end
+  end
+
   describe "GET show" do
     it "assigns the requested user as @user" do
       user = User.create! valid_attributes

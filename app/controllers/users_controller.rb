@@ -21,6 +21,13 @@ class UsersController < ApplicationController
   def edit
   end
 
+  def taken
+    valid = User.where(username: params[:username]).empty?
+    respond_to do |format|
+      format.json { render json: { valid: valid } }
+    end
+  end
+
   # POST /users
   # POST /users.json
   def create

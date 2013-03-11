@@ -1,6 +1,53 @@
+function validateUsername () {
+  var isValid = function (response) {
+    if (response['valid']) {
+      $username.addClass('success');
+      $username.removeClass('warning');
+      $warning.hide();
+      $success.show();
+      $error.hide();
+      $invalid.hide();
+    } else {
+      $warning.show();
+      $success.hide();
+      $error.hide();
+      $invalid.hide();
+      $username.addClass('warning');
+      $username.removeClass('success');
+    }
+  }
+
+  var $username = $("#user_username");
+  var $success = $username.siblings(".success");
+  var $warning = $username.siblings(".warning");
+  var $error = $username.siblings(".error:first");
+  var $invalid = $username.siblings(".invalid");
+  var regex = new RegExp(/\ /);
+
+  $username.keyup( function () {
+    if ($username.val().length < 2) {
+      $warning.hide();
+      $success.hide();
+      $invalid.hide();
+      $error.show();
+    } else if (regex.test($username.val())) {
+      $warning.hide();
+      $success.hide();
+      $invalid.show();
+      $error.hide();
+    } else {
+      $.post("/users/taken.json", { "format": 'json', "username": $(this).val() })
+      .done( isValid );
+    }
+  });
+  $username.keyup();
+}
+$(document).on('ready', validateUsername);
+$(document).on('page:load', validateUsername);
+
 function validateEmail () {
-  function validateEmail() {
-      var regex = new RegExp(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+  var validateEmail = function () {
+    var regex = new RegExp(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
       var $this = $(this);
       if (regex.test($this.val())) {
         $this.addClass("success");
@@ -53,6 +100,5 @@ function passwordMatch () {
   $original.keyup( match );
   $original.keyup();
 };
-
 $(document).on('ready', passwordMatch);
 $(document).on('page:load', passwordMatch);

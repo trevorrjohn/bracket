@@ -9,6 +9,10 @@
   .field
     = f.label :username
     = f.text_field :username
+    %span.success Username available
+    %span.warning Username is already taken
+    %span.error Username is too short
+    %span.error.invalid Username is invalid
   .field
     = f.label :email
     = f.email_field :email
