@@ -5,4 +5,9 @@
     .nav
       = link_to 'About', about_path
       |
-      = link_to 'Sign up', new_user_path
+      - if logged_in?
+        = link_to 'Sign up', new_user_path
+        |
+        = link_to 'Sign in', login_path
+      - else
+        = link_to 'Sign out', logout_path, method: :delete

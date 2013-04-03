@@ -54,8 +54,8 @@ describe "User sign in" do
     it "should link to user page after sign in" do
       click_link "Sign in"
 
-      fill_in "user[username]", with: user.username
-      fill_in "user[password]", with: user.password
+      fill_in "username", with: user.username
+      fill_in "password", with: user.password
 
       click_button "Sign in"
 
@@ -70,8 +70,8 @@ describe "User sign in" do
     it "should not allow a user sign in" do
       click_link "Sign in"
 
-      fill_in "user[username]", with: "noone"
-      fill_in "user[password]", with: "invalid_pass"
+      fill_in "username", with: "noone"
+      fill_in "password", with: "invalid_pass"
 
       click_button "Sign in"
 

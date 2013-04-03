@@ -1,9 +1,15 @@
 Bracket::Application.routes.draw do
-  get "sessions/new"
+  get :login, to: 'sessions#new'
+  post :login, to: 'sessions#create'
+  delete :logout, to: 'sessions#destroy'
+
+  resources :users do
+    post :taken, on: :collection
+  end
+
   get "/about", to: "pages#about"
   get '/_styleguide', to: 'pages#styleguide'
-  resources :users
-  post 'users/taken', to: 'users#taken'
 
   root to: 'pages#index'
 end
+
