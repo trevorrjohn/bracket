@@ -1,4 +1,5 @@
 Bracket::Application.routes.draw do
+  get "sessions/new"
   get "/about", to: "pages#about"
   get '/_styleguide', to: 'pages#styleguide'
   resources :users

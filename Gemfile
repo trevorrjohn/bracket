@@ -13,11 +13,12 @@ gem 'turbolinks'
 group :test, :development do
   gem 'capybara-webkit'
   gem 'database_cleaner', github: 'bmabey/database_cleaner'
+  gem 'factory_girl_rails'
+  gem 'faker'
+  gem 'launchy'
   gem 'pry'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
-  gem 'factory_girl_rails'
-  gem 'faker'
 end
 
 # Gems used only for assets and not required

@@ -2,7 +2,7 @@ function validateUsername () {
   var isValid = function (response) {
     if (response['valid']) {
       $username.addClass('success');
-      $username.removeClass('warning');
+      $username.removeClass('error');
       $warning.hide();
       $success.show();
       $error.hide();
@@ -12,7 +12,7 @@ function validateUsername () {
       $success.hide();
       $error.hide();
       $invalid.hide();
-      $username.addClass('warning');
+      $username.addClass('error');
       $username.removeClass('success');
     }
   }
@@ -30,11 +30,15 @@ function validateUsername () {
       $success.hide();
       $invalid.hide();
       $error.show();
+      $username.addClass('error');
+      $username.removeClass('success');
     } else if (regex.test($username.val())) {
       $warning.hide();
       $success.hide();
       $invalid.show();
       $error.hide();
+      $username.addClass('error');
+      $username.removeClass('success');
     } else {
       $.post("/users/taken.json", { "format": 'json', "username": $(this).val() })
       .done( isValid );
@@ -51,11 +55,11 @@ function validateEmail () {
       var $this = $(this);
       if (regex.test($this.val())) {
         $this.addClass("success");
-        $this.removeClass("warning");
+        $this.removeClass("error");
         $valid.show();
         $warning.hide();
       } else {
-        $this.addClass("warning");
+        $this.addClass("error");
         $this.removeClass("success");
         $valid.hide();
         $warning.show();
